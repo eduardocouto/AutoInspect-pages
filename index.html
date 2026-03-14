@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoInspect - Inspeção Inteligente de Automóveis com IA</title>
-    <meta name="description" content="AutoInspect usa inteligência artificial para inspecionar automóveis, detetar danos e gerar relatórios profissionais em PDF. Disponível no Google Play.">
-    <meta name="keywords" content="inspeção automóvel, IA, inteligência artificial, danos veículo, relatório PDF, peças auto, AutoInspect">
-    <meta property="og:title" content="AutoInspect - Inspeção Inteligente de Automóveis">
-    <meta property="og:description" content="Inspeccione qualquer veículo com IA. Detecção de danos, estimativas de reparação e relatório PDF profissional.">
+    <title>AutoInspect - AI-Powered Vehicle Inspection App</title>
+    <meta name="description" content="AutoInspect uses artificial intelligence to inspect vehicles, detect damage and generate professional PDF reports. Available on Google Play.">
+    <meta name="keywords" content="vehicle inspection, AI, artificial intelligence, car damage, PDF report, auto parts, AutoInspect">
+    <meta property="og:title" content="AutoInspect - AI-Powered Vehicle Inspection">
+    <meta property="og:description" content="Inspect any vehicle with AI. Damage detection, repair estimates and professional PDF report.">
     <meta property="og:image" content="assets/feature-graphic-1024x500.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="assets/icon-512.png">
@@ -17,10 +17,13 @@
         header { background: linear-gradient(135deg, #18181B 0%, #27272A 100%); color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
         .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
-        .logo img { width: 40px; height: 40px; border-radius: 10px; }
+        .logo img { width: 48px; height: 48px; border-radius: 12px; }
         .logo span { font-size: 20px; font-weight: 700; }
+        nav { display: flex; align-items: center; gap: 0; }
         nav a { color: #a1a1aa; text-decoration: none; margin-left: 24px; font-size: 14px; transition: color 0.2s; }
         nav a:hover { color: #10B981; }
+        .lang-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 6px; font-size: 13px; cursor: pointer; margin-left: 24px; transition: background 0.2s; }
+        .lang-toggle:hover { background: rgba(255,255,255,0.2); }
         .hero { background: linear-gradient(135deg, #18181B 0%, #27272A 50%, #064E3B 100%); color: white; padding: 80px 24px; text-align: center; }
         .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 16px; line-height: 1.1; }
         .hero h1 em { color: #10B981; font-style: normal; }
@@ -80,7 +83,7 @@
             .hero h1 { font-size: 32px; }
             .hero p { font-size: 16px; }
             .features h2, .how-it-works h2, .screenshots h2, .parts h2, .pricing h2, .cta h2 { font-size: 28px; }
-            nav { display: none; }
+            nav a.nav-link { display: none; }
         }
     </style>
 </head>
@@ -93,183 +96,206 @@
             <span>AutoInspect</span>
         </a>
         <nav>
-            <a href="#features">Funcionalidades</a>
-            <a href="#how-it-works">Como Funciona</a>
-            <a href="#parts">Peças</a>
-            <a href="#pricing">Preços</a>
-            <a href="privacy-policy.html">Privacidade</a>
+            <a href="#features" class="nav-link" data-en="Features" data-pt="Funcionalidades">Features</a>
+            <a href="#how-it-works" class="nav-link" data-en="How It Works" data-pt="Como Funciona">How It Works</a>
+            <a href="#parts" class="nav-link" data-en="Parts" data-pt="Peças">Parts</a>
+            <a href="#pricing" class="nav-link" data-en="Pricing" data-pt="Preços">Pricing</a>
+            <a href="privacy-policy.html" class="nav-link" data-en="Privacy" data-pt="Privacidade">Privacy</a>
+            <button class="lang-toggle" onclick="toggleLang()">PT</button>
         </nav>
     </div>
 </header>
 
 <section class="hero">
-    <div class="hero-badge">Disponivel no Google Play</div>
-    <h1>Inspeção Automovel<br>com <em>Inteligencia Artificial</em></h1>
-    <p>Fotografe o veiculo, e a nossa IA deteta danos, estima custos de reparação e gera um relatorio profissional em PDF — em segundos.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.autoinspect.app" class="hero-cta">
-        Descarregar no Google Play
-    </a>
+    <img src="assets/icon-512.png" alt="AutoInspect" style="width:120px;height:120px;border-radius:28px;margin-bottom:24px;box-shadow:0 8px 32px rgba(16,185,129,0.3);">
+    <div class="hero-badge" data-en="Available on Google Play" data-pt="Disponivel no Google Play">Available on Google Play</div>
+    <h1 data-en="Vehicle Inspection<br>with <em>Artificial Intelligence</em>" data-pt="Inspeção Automovel<br>com <em>Inteligencia Artificial</em>">Vehicle Inspection<br>with <em>Artificial Intelligence</em></h1>
+    <p data-en="Photograph the vehicle and our AI detects damage, estimates repair costs and generates a professional PDF report — in seconds." data-pt="Fotografe o veiculo, e a nossa IA deteta danos, estima custos de reparação e gera um relatorio profissional em PDF — em segundos.">Photograph the vehicle and our AI detects damage, estimates repair costs and generates a professional PDF report — in seconds.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.autoinspect.app" class="hero-cta" data-en="Download on Google Play" data-pt="Descarregar no Google Play">Download on Google Play</a>
 </section>
 
 <section class="features" id="features">
-    <h2>Funcionalidades</h2>
-    <p class="subtitle">Tudo o que precisa para inspecionar um veiculo de forma profissional</p>
+    <h2 data-en="Features" data-pt="Funcionalidades">Features</h2>
+    <p class="subtitle" data-en="Everything you need to inspect a vehicle professionally" data-pt="Tudo o que precisa para inspecionar um veiculo de forma profissional">Everything you need to inspect a vehicle professionally</p>
     <div class="features-grid">
         <div class="feature-card">
             <div class="icon">&#128247;</div>
-            <h3>Deteção de Danos por IA</h3>
-            <p>Tire fotos do veiculo e a nossa inteligencia artificial identifica automaticamente amolgadelas, riscos, corrosão e outros danos, classificando a severidade de cada um.</p>
+            <h3 data-en="AI Damage Detection" data-pt="Deteção de Danos por IA">AI Damage Detection</h3>
+            <p data-en="Take photos of the vehicle and our AI automatically identifies dents, scratches, corrosion and other damage, classifying the severity of each." data-pt="Tire fotos do veiculo e a nossa IA identifica automaticamente amolgadelas, riscos, corrosão e outros danos, classificando a severidade de cada um.">Take photos of the vehicle and our AI automatically identifies dents, scratches, corrosion and other damage, classifying the severity of each.</p>
         </div>
         <div class="feature-card">
             <div class="icon">&#128203;</div>
-            <h3>Checklist Completo</h3>
-            <p>13 pontos de inspeção cobrindo motor, pneus, travões, luzes e interior. A IA preenche automaticamente com base nas fotografias.</p>
+            <h3 data-en="Complete Checklist" data-pt="Checklist Completo">Complete Checklist</h3>
+            <p data-en="13 inspection points covering engine, tyres, brakes, lights and interior. AI fills it in automatically based on the photographs." data-pt="13 pontos de inspeção cobrindo motor, pneus, travões, luzes e interior. A IA preenche automaticamente com base nas fotografias.">13 inspection points covering engine, tyres, brakes, lights and interior. AI fills it in automatically based on the photographs.</p>
         </div>
         <div class="feature-card">
             <div class="icon">&#128196;</div>
-            <h3>Relatorio PDF Profissional</h3>
-            <p>Relatorio completo com dados do veiculo, tabela de danos, fotos, checklist, resumo da IA e recomendações de manutenção. Pronto a partilhar.</p>
+            <h3 data-en="Professional PDF Report" data-pt="Relatorio PDF Profissional">Professional PDF Report</h3>
+            <p data-en="Complete report with vehicle data, damage table, photos, checklist, AI summary and maintenance recommendations. Ready to share." data-pt="Relatorio completo com dados do veiculo, tabela de danos, fotos, checklist, resumo da IA e recomendações de manutenção. Pronto a partilhar.">Complete report with vehicle data, damage table, photos, checklist, AI summary and maintenance recommendations. Ready to share.</p>
         </div>
         <div class="feature-card">
             <div class="icon">&#128295;</div>
-            <h3>Estimativas de Reparação</h3>
-            <p>Para cada dano identificado, a app sugere o tratamento adequado e uma estimativa de custo, com links diretos para peças e produtos recomendados.</p>
+            <h3 data-en="Repair Estimates" data-pt="Estimativas de Reparação">Repair Estimates</h3>
+            <p data-en="For each identified damage, the app suggests the appropriate treatment and a cost estimate, with direct links to recommended parts and products." data-pt="Para cada dano identificado, a app sugere o tratamento adequado e uma estimativa de custo, com links diretos para peças e produtos recomendados.">For each identified damage, the app suggests the appropriate treatment and a cost estimate, with direct links to recommended parts and products.</p>
         </div>
         <div class="feature-card">
             <div class="icon">&#127758;</div>
-            <h3>8 Idiomas</h3>
-            <p>Disponivel em Portugues, Ingles, Espanhol, Frances, Alemão, Italiano, Chines e Arabe. O relatorio e gerado no idioma do dispositivo.</p>
+            <h3 data-en="8 Languages" data-pt="8 Idiomas">8 Languages</h3>
+            <p data-en="Available in Portuguese, English, Spanish, French, German, Italian, Chinese and Arabic. Reports are generated in the device language." data-pt="Disponivel em Portugues, Ingles, Espanhol, Frances, Alemão, Italiano, Chines e Arabe. O relatorio e gerado no idioma do dispositivo.">Available in Portuguese, English, Spanish, French, German, Italian, Chinese and Arabic. Reports are generated in the device language.</p>
         </div>
         <div class="feature-card">
             <div class="icon">&#128241;</div>
-            <h3>Scan do Livrete</h3>
-            <p>Fotografe o documento de registo do veiculo e a IA extrai automaticamente a marca, modelo, motorização, combustivel e VIN.</p>
+            <h3 data-en="Registration Document Scan" data-pt="Scan do Livrete">Registration Document Scan</h3>
+            <p data-en="Photograph the vehicle registration document and the AI automatically extracts make, model, engine, fuel type and VIN." data-pt="Fotografe o documento de registo do veiculo e a IA extrai automaticamente a marca, modelo, motorização, combustivel e VIN.">Photograph the vehicle registration document and the AI automatically extracts make, model, engine, fuel type and VIN.</p>
         </div>
     </div>
 </section>
 
 <section class="how-it-works" id="how-it-works">
     <div class="how-it-works-inner">
-        <h2>Como Funciona</h2>
+        <h2 data-en="How It Works" data-pt="Como Funciona">How It Works</h2>
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Identifique o Veiculo</h3>
-                <p>Selecione a marca e modelo ou digitalize o livrete para preenchimento automatico.</p>
+                <h3 data-en="Identify the Vehicle" data-pt="Identifique o Veiculo">Identify the Vehicle</h3>
+                <p data-en="Select make and model or scan the registration document for automatic fill." data-pt="Selecione a marca e modelo ou digitalize o livrete para preenchimento automatico.">Select make and model or scan the registration document for automatic fill.</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Fotografe</h3>
-                <p>Tire fotos de todos os angulos: frente, traseira, laterais, interior e detalhes de danos.</p>
+                <h3 data-en="Take Photos" data-pt="Fotografe">Take Photos</h3>
+                <p data-en="Photograph from all angles: front, rear, sides, interior and damage details." data-pt="Tire fotos de todos os angulos: frente, traseira, laterais, interior e detalhes de danos.">Photograph from all angles: front, rear, sides, interior and damage details.</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>Analise IA</h3>
-                <p>A inteligencia artificial analisa as fotos, deteta danos, preenche o checklist e estima custos.</p>
+                <h3 data-en="AI Analysis" data-pt="Analise IA">AI Analysis</h3>
+                <p data-en="Artificial intelligence analyses the photos, detects damage, fills in the checklist and estimates costs." data-pt="A inteligencia artificial analisa as fotos, deteta danos, preenche o checklist e estima custos.">Artificial intelligence analyses the photos, detects damage, fills in the checklist and estimates costs.</p>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
-                <h3>Relatorio PDF</h3>
-                <p>Receba um relatorio profissional com tudo incluido, pronto a partilhar ou imprimir.</p>
+                <h3 data-en="PDF Report" data-pt="Relatorio PDF">PDF Report</h3>
+                <p data-en="Receive a professional report with everything included, ready to share or print." data-pt="Receba um relatorio profissional com tudo incluido, pronto a partilhar ou imprimir.">Receive a professional report with everything included, ready to share or print.</p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="screenshots" id="screenshots">
-    <h2>A App em Ação</h2>
+    <h2 data-en="The App in Action" data-pt="A App em Ação">The App in Action</h2>
     <div class="screenshots-scroll">
-        <img src="assets/screenshot_1.jpeg" alt="Painel principal" loading="lazy">
-        <img src="assets/screenshot_2.jpeg" alt="Nova inspeção" loading="lazy">
+        <img src="assets/screenshot_1.jpeg" alt="Dashboard" loading="lazy">
+        <img src="assets/screenshot_2.jpeg" alt="New inspection" loading="lazy">
         <img src="assets/screenshot_3.jpeg" alt="Checklist" loading="lazy">
-        <img src="assets/screenshot_4.jpeg" alt="Analise de danos" loading="lazy">
-        <img src="assets/screenshot_5.jpeg" alt="Relatorio PDF" loading="lazy">
+        <img src="assets/screenshot_4.jpeg" alt="Damage analysis" loading="lazy">
+        <img src="assets/screenshot_5.jpeg" alt="PDF report" loading="lazy">
     </div>
 </section>
 
 <section class="parts" id="parts">
     <div class="parts-inner">
-        <h2>Peças e Reparações</h2>
-        <p>Para cada dano identificado, a AutoInspect sugere peças e produtos de reparação com links diretos para lojas especializadas e estimativas de custo.</p>
+        <h2 data-en="Parts &amp; Repairs" data-pt="Peças e Reparações">Parts &amp; Repairs</h2>
+        <p data-en="For each identified damage, AutoInspect suggests replacement parts and repair products with direct links to specialised stores and cost estimates." data-pt="Para cada dano identificado, a AutoInspect sugere peças e produtos de reparação com links diretos para lojas especializadas e estimativas de custo.">For each identified damage, AutoInspect suggests replacement parts and repair products with direct links to specialised stores and cost estimates.</p>
         <div class="parts-grid">
             <div class="parts-card">
-                <h3>Peças Automoveis</h3>
-                <p>Links diretos para peças compativeis com o seu veiculo em lojas especializadas como Autodoc, com preços de referencia.</p>
+                <h3 data-en="Auto Parts" data-pt="Peças Automoveis">Auto Parts</h3>
+                <p data-en="Direct links to compatible parts for your vehicle at specialised retailers like Autodoc, with reference prices." data-pt="Links diretos para peças compativeis com o seu veiculo em lojas especializadas como Autodoc, com preços de referencia.">Direct links to compatible parts for your vehicle at specialised retailers like Autodoc, with reference prices.</p>
             </div>
             <div class="parts-card">
-                <h3>Produtos de Reparação</h3>
-                <p>Kits de reparação PDR, anti-ferrugem, renovadores de plasticos, tintas de retoque e mais — tudo especifico para os danos detetados.</p>
+                <h3 data-en="Repair Products" data-pt="Produtos de Reparação">Repair Products</h3>
+                <p data-en="PDR repair kits, anti-rust treatments, plastic restorers, touch-up paints and more — all specific to the detected damage." data-pt="Kits de reparação PDR, anti-ferrugem, renovadores de plasticos, tintas de retoque e mais — tudo especifico para os danos detetados.">PDR repair kits, anti-rust treatments, plastic restorers, touch-up paints and more — all specific to the detected damage.</p>
             </div>
             <div class="parts-card">
-                <h3>QR Codes no PDF</h3>
-                <p>Cada dano no relatorio PDF inclui um QR code que leva diretamente a pagina do produto recomendado. Perfeito para impressão.</p>
+                <h3 data-en="QR Codes in PDF" data-pt="QR Codes no PDF">QR Codes in PDF</h3>
+                <p data-en="Each damage in the PDF report includes a QR code linking directly to the recommended product page. Perfect for print." data-pt="Cada dano no relatorio PDF inclui um QR code que leva diretamente a pagina do produto recomendado. Perfeito para impressão.">Each damage in the PDF report includes a QR code linking directly to the recommended product page. Perfect for print.</p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="pricing" id="pricing">
-    <h2>Preços</h2>
-    <p class="subtitle">A primeira inspeção e gratuita</p>
+    <h2 data-en="Pricing" data-pt="Preços">Pricing</h2>
+    <p class="subtitle" data-en="First inspection is free" data-pt="A primeira inspeção e gratuita">First inspection is free</p>
     <div class="pricing-grid">
         <div class="pricing-card">
-            <h3>Inspeção Unica</h3>
+            <h3 data-en="Single Inspection" data-pt="Inspeção Unica">Single Inspection</h3>
             <div class="price">&euro;1.99</div>
-            <div class="period">por inspeção</div>
+            <div class="period" data-en="per inspection" data-pt="por inspeção">per inspection</div>
             <ul>
-                <li>1 inspeção completa</li>
-                <li>Relatorio PDF</li>
-                <li>Analise IA de danos</li>
-                <li>Estimativas de reparação</li>
+                <li data-en="1 full inspection" data-pt="1 inspeção completa">1 full inspection</li>
+                <li data-en="PDF report" data-pt="Relatorio PDF">PDF report</li>
+                <li data-en="AI damage analysis" data-pt="Analise IA de danos">AI damage analysis</li>
+                <li data-en="Repair estimates" data-pt="Estimativas de reparação">Repair estimates</li>
             </ul>
         </div>
         <div class="pricing-card featured">
             <h3>Pack 10</h3>
             <div class="price">&euro;9.99</div>
-            <div class="period">10 inspeções</div>
+            <div class="period" data-en="10 inspections" data-pt="10 inspeções">10 inspections</div>
             <ul>
-                <li>10 inspeções completas</li>
-                <li>Melhor valor por inspeção</li>
-                <li>Relatorio PDF</li>
-                <li>Analise IA de danos</li>
-                <li>Estimativas de reparação</li>
+                <li data-en="10 full inspections" data-pt="10 inspeções completas">10 full inspections</li>
+                <li data-en="Best value per inspection" data-pt="Melhor valor por inspeção">Best value per inspection</li>
+                <li data-en="PDF report" data-pt="Relatorio PDF">PDF report</li>
+                <li data-en="AI damage analysis" data-pt="Analise IA de danos">AI damage analysis</li>
+                <li data-en="Repair estimates" data-pt="Estimativas de reparação">Repair estimates</li>
             </ul>
         </div>
         <div class="pricing-card">
-            <h3>Semanal Ilimitado</h3>
+            <h3 data-en="Weekly Unlimited" data-pt="Semanal Ilimitado">Weekly Unlimited</h3>
             <div class="price">&euro;19.99</div>
-            <div class="period">por semana</div>
+            <div class="period" data-en="per week" data-pt="por semana">per week</div>
             <ul>
-                <li>Inspeções ilimitadas</li>
-                <li>Ideal para profissionais</li>
-                <li>Relatorios PDF ilimitados</li>
-                <li>Todas as funcionalidades</li>
+                <li data-en="Unlimited inspections" data-pt="Inspeções ilimitadas">Unlimited inspections</li>
+                <li data-en="Ideal for professionals" data-pt="Ideal para profissionais">Ideal for professionals</li>
+                <li data-en="Unlimited PDF reports" data-pt="Relatorios PDF ilimitados">Unlimited PDF reports</li>
+                <li data-en="All features included" data-pt="Todas as funcionalidades">All features included</li>
             </ul>
         </div>
     </div>
 </section>
 
 <section class="cta">
-    <h2>Pronto para inspecionar?</h2>
-    <p>Descarregue o AutoInspect gratuitamente e faça a sua primeira inspeção.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.autoinspect.app" class="hero-cta">
-        Descarregar no Google Play
-    </a>
+    <h2 data-en="Ready to inspect?" data-pt="Pronto para inspecionar?">Ready to inspect?</h2>
+    <p data-en="Download AutoInspect for free and run your first inspection." data-pt="Descarregue o AutoInspect gratuitamente e faça a sua primeira inspeção.">Download AutoInspect for free and run your first inspection.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.autoinspect.app" class="hero-cta" data-en="Download on Google Play" data-pt="Descarregar no Google Play">Download on Google Play</a>
 </section>
 
 <footer>
     <div class="footer-inner">
         <div class="footer-links">
-            <a href="privacy-policy.html">Politica de Privacidade</a>
-            <a href="terms-of-service.html">Termos de Utilização</a>
-            <a href="mailto:ecoutoarq@gmail.com">Contacto</a>
+            <a href="privacy-policy.html" data-en="Privacy Policy" data-pt="Politica de Privacidade">Privacy Policy</a>
+            <a href="terms-of-service.html" data-en="Terms of Service" data-pt="Termos de Utilização">Terms of Service</a>
+            <a href="mailto:ecoutoarq@gmail.com" data-en="Contact" data-pt="Contacto">Contact</a>
         </div>
         <div class="footer-company">
             ARCHIGENIUS, UNIPESSOAL LDA &bull; NIF 519232526 &bull; Porto, Portugal<br>
-            &copy; 2026 AutoInspect. Todos os direitos reservados.
+            &copy; 2026 AutoInspect. All rights reserved.
         </div>
     </div>
 </footer>
+
+<script>
+let currentLang = localStorage.getItem('lang') || 'en';
+
+function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+    document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'PT' : 'EN';
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang) || el.innerHTML;
+    });
+}
+
+function toggleLang() {
+    applyLang(currentLang === 'en' ? 'pt' : 'en');
+}
+
+// Auto-detect language on first visit
+if (!localStorage.getItem('lang')) {
+    const browserLang = navigator.language.slice(0, 2);
+    currentLang = browserLang === 'pt' ? 'pt' : 'en';
+}
+applyLang(currentLang);
+</script>
 
 </body>
 </html>
