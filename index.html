@@ -291,10 +291,9 @@ function toggleLang() {
     applyLang(currentLang === 'en' ? 'pt' : 'en');
 }
 
-// Auto-detect language on first visit
+// Always default to English
 if (!localStorage.getItem('lang')) {
-    const browserLang = navigator.language.slice(0, 2);
-    currentLang = browserLang === 'pt' ? 'pt' : 'en';
+    currentLang = 'en';
 }
 applyLang(currentLang);
 </script>
